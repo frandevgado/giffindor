@@ -1,0 +1,14 @@
+import ListOfGifs from "../../components/ListOfGifs"
+import useGifs from '../../hooks/useGifs'
+
+const SearchResults = ({ params }) => {
+    const { keyword } = params
+    const {loading, gifs} = useGifs({ keyword })
+
+    return (
+            loading ? <i style={{color: 'white'}}>Cargando...</i> 
+            : <ListOfGifs gifs={gifs} />
+        )
+}
+
+export default SearchResults
