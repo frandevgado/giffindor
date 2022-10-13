@@ -1,4 +1,4 @@
-import RoundedImg from "./styled/RoundedImg"
+import GifImg from "./styled/RoundedImg"
 import { useLocation } from 'wouter'
 
 export default function Gif({title,url, id}){
@@ -10,6 +10,6 @@ export default function Gif({title,url, id}){
       }
 
     return (
-          <RoundedImg onClick={handleClick} src={url} id={id} alt={title} />
+          <GifImg onClick={handleClick} src={url} id={id} alt={title} />
     )
 }

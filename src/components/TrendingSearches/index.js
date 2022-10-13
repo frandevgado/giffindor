@@ -1,13 +1,18 @@
-import getTrendingGifs from '../../services/getTrendingGifs'
-import { useState, useEffect } from 'react'
-import Category from '../Category'
+import React from 'react'
+import useNearScreen from 'hooks/useNearScreen'
+import { Suspense } from 'react'
 
-export default function TrendingSearches(){
-    const [trends, setTrends] = useState([])
+const TrendingSearches = React.lazy(
+    () => import('./TrendingSearches')
+)
 
-    useEffect(() =>{
-        getTrendingGifs().then(setTrends)
-    },[])
+export default function LazyTranding () {
+    const {isNearScreen, fromRef} = useNearScreen({distance : '330px'})
 
-    return  <Category name="¡Tendencias!" options={trends} />
+
+    return <div ref={fromRef}>
+        <Suspense fallback='loading bro'>
+            {isNearScreen ? <TrendingSearches /> : null}
+        </Suspense>
+    </div>
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'wouter'
 
 const StyledLogoLink = styled(Link)`
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     margin-top: 1em;
 
     font-family: 'Montserrat';
@@ -10,6 +10,7 @@ const StyledLogoLink = styled(Link)`
     font-weight: 600;
     color: hsl(360, 65%, 50%);
     text-decoration: none;
+    text-align: center;
 
 `
 

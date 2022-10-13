@@ -1,16 +1,15 @@
-import { StyledTrendLink, TrendUList } from "./styled/UList"
+import { StyledTrendLink, TrendUList, Section } from "./styled/UList"
 import { Subtitle } from "./styled/Headings"
 
-export default function Category({name, options}){
 
-        console.log(options)
+export default function Category({name, options}){
     return (
 
-        <section>
+        <Section>
         <Subtitle>{name}</Subtitle>
         <TrendUList>
             {options.map(singleOption => <StyledTrendLink to={`/search/${singleOption}`} key={singleOption}>{singleOption}</StyledTrendLink>)}
         </TrendUList>
-        </section>
+        </Section>
     )
 }

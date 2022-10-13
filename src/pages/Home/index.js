@@ -1,17 +1,18 @@
 import { useLocation } from 'wouter'
-import XAlignDiv from '../../components/styled/XAlignDiv' 
-import {Subtitle} from '../../components/styled/Headings'
-import {UList, StyledTrendLink} from '../../components/styled/UList'
+import { XAlignDiv, MainContainer } from 'components/styled/Containers' 
 import { useState } from 'react'
-import useGifs from '../../hooks/useGifs'
-import ListOfGifs from '../../components/ListOfGifs'
-import { StyledButton, StyledInput, StyledForm } from '../../components/styled/Inputs'
-import TrendingSearches from '../../components/TrendingSearches'
+import useGifs from 'hooks/useGifs'
+import ListOfGifs from 'components/ListOfGifs'
+import { StyledButton, StyledInput, StyledForm } from 'components/styled/Inputs'
+import TrendingSearches from 'components/TrendingSearches'
+import { Subtitle } from 'components/styled/Headings'
+import Spinner from 'components/Spinner'
 
 const Home = () => {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation()
     const { loading, gifs } = useGifs()
+    const lastSearchTitle = localStorage.getItem('lastKeyword')
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
@@ -26,18 +27,18 @@ const Home = () => {
 
     return (
         <>
-            <XAlignDiv>
+          <XAlignDiv>
                 <StyledForm onSubmit={handleSubmit} >
-                    <StyledInput search placeholder="Busca tus gifs aquí" onChange={handleChange} type="text" value={keyword} />
-                    <StyledButton>Buscar</StyledButton>
+                  <StyledInput search placeholder="Busca tus gifs aquí" onChange={handleChange} type="text" value={keyword} />
+                  <StyledButton>Buscar</StyledButton>
                 </StyledForm>
-                <Subtitle>Tu última búsqueda ↓</Subtitle>
-                {loading ? <i style={{color: 'white'}}>Cargando...</i> 
-            : <ListOfGifs gifs={gifs} />}
-                <UList>
-                <TrendingSearches />
-                </UList>
-            </XAlignDiv>
+                  <Subtitle left topMargin>↓ Tu última búsqueda: {decodeURI(lastSearchTitle)} </Subtitle>
+                <MainContainer>
+                  {loading ? <Spinner/>
+                  : <ListOfGifs gifs={gifs} />}
+                  <TrendingSearches />
+                </MainContainer>
+          </XAlignDiv>
         </>
     )
 }

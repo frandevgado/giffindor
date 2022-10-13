@@ -13,15 +13,37 @@ const UList = styled.ul`
 
 const TrendUList = styled.ul`
     padding: 0;
+    width: 90%;
     display: flex;
-    gap: 3px;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 3px 6px;
+    justify-content: center;
+
+    @media (min-width: 996px){
+        flex-direction: column;
+    }
+`
+
+const Section = styled.section`
+    width: 100%;
+    height: fit-content;
+    
+    display: flex;
     flex-direction: column;
+    align-items: center;
 `
 
 const StyledTrendLink = styled(Link)`
-    list-style-type: none;
+    width: fit-content;
+    background-color: #222;
     color: white;
+    list-style-type: circle;
+    font-size: 1.2em;
+    transition: color 300ms;
+
+    &:hover{
+        color: hsl(360, 65%, 50%);
+    }
 `
 
-export {UList, StyledTrendLink, TrendUList}
+export {Section, UList, StyledTrendLink, TrendUList}

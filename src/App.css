@@ -6,8 +6,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  
 
-  /* font-size: calc(10px + 2vmin); */
+  font-size: calc(2px + 1vmin);
   color: rgb(31, 31, 31);
 }
 

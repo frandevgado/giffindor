@@ -28,7 +28,12 @@ const StyledInput = styled.input`
     border-radius: ${props => props.search ?
         "5px 0px 0px 5px" : "0px"};
 
-    font-family: 'Montserrat'
+    font-family: 'Montserrat';
+
+    &:focus{
+        outline: solid 1px #07f;
+        outline-offset: -2px;
+    }
 `
 
 export {StyledButton, StyledInput, StyledForm}

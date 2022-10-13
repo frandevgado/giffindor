@@ -1,5 +1,6 @@
-import Gif from "../../components/Gif"
-import useGlobalGifs from "../../hooks/useGlobalGif"
+import Gif from "components/Gif"
+import useGlobalGifs from "hooks/useGlobalGif"
+import { XAlignDiv } from "components/styled/Containers"
 
 const Detail = ({ params }) => {
 
@@ -8,7 +9,11 @@ const Detail = ({ params }) => {
   const gif = gifs.find(singleGif => singleGif.id === params.id)
 
 
-    return <Gif {...gif} />
+    return(
+      <XAlignDiv detailSize>
+        <Gif {...gif} />
+      </XAlignDiv>
+    )
 }
 
 export default Detail
