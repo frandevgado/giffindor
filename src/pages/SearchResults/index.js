@@ -4,16 +4,18 @@ import useGifs from 'hooks/useGifs'
 
 const SearchResults = ({ params }) => {
     const { keyword } = params
-    const {loading, gifs} = useGifs({ keyword })
+    const {loading, gifs, setPage} = useGifs({ keyword })
 
     const title = gifs ? `${gifs.length} resultados de ${keyword}` : ""
 
-
+    const handleNextPage = () => setPage(prevPage => prevPage + 1)
+    
     return (
         <>
             <Subtitle>{decodeURI(title)}</Subtitle>
             {loading ? <i style={{color: 'white'}}>Cargando...</i> 
             : <ListOfGifs gifs={gifs} />}
+            <button onClick={handleNextPage}>Next page</button>
         </>
         )
 }

@@ -13,6 +13,8 @@ const XAlignDiv = styled.div`
     }
 `
 
+
+
 const MainContainer = styled.section`
     margin-top: 40px;
     width: 90vw;

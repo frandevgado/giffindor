@@ -1,13 +1,9 @@
 import Gif from './Gif'
-import { XAlignDiv } from './styled/Containers'
 import GifsContainer from './styled/GifsContainer'
-import { Subtitle } from './styled/Headings'
 
 
-const ListOfGifs = ({ gifs, loading }) =>{
 
-  loading ? <i style={{color: 'white'}}>Cargando...</i> 
-  : <ListOfGifs gifs={gifs} />
+const ListOfGifs = ({ gifs}) =>{
     return (
         <GifsContainer>
           {

@@ -1,6 +1,7 @@
 import React from 'react'
 import useNearScreen from 'hooks/useNearScreen'
 import { Suspense } from 'react'
+import ReactPlaceholder from 'react-placeholder/lib'
 
 const TrendingSearches = React.lazy(
     () => import('./TrendingSearches')
@@ -11,7 +12,7 @@ export default function LazyTranding () {
 
 
     return <div ref={fromRef}>
-        <Suspense fallback='loading bro'>
+        <Suspense fallback={<ReactPlaceholder showLoadingAnimation={true} type='text' />}>
             {isNearScreen ? <TrendingSearches /> : null}
         </Suspense>
     </div>
