@@ -1,0 +1,10 @@
+.gifs-container {
+    min-height: 100vh;
+    align-self: start;
+    justify-self: center;
+    width: 70vw;
+    margin: 20px;
+    columns: 5 320px;
+    column-gap: 8px;
+    text-align:left;
+}
