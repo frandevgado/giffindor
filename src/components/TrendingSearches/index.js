@@ -1,14 +1,12 @@
 import useNearScreen from 'hooks/useNearScreen'
-import { lazy }from 'react'
-import { Suspense } from 'react'
+import { lazy, Suspense }from 'react'
+import MyLoader from 'components/Fallbacks'
 const TrendingSearches = lazy(() => import('./TrendingSearches'))
 
 export default function LazyTrending(){
-    const { NearScreen, elementRef } = useNearScreen()
+    const { NearScreen, elementRef } = useNearScreen({distance: '0px'})
 
-   return <div ref={elementRef}>
-     <Suspense fallback="Cargando...">
-       {NearScreen ? <TrendingSearches /> : null}
-     </Suspense>
+   return <div className='trending-container' ref={elementRef}>
+       {NearScreen ? <TrendingSearches /> : <MyLoader />}
    </div>
 }

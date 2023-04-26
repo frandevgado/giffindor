@@ -6,7 +6,7 @@
 }
 
 .logo {
-    margin: 0px 0px;
+    margin: 30px 30px 0px;
     padding: 0;
     font-family: 'poppins';
     font-size: 64px;
@@ -36,8 +36,14 @@
     color: hsl(251, 50%, 50%);
 }
 
-.trending-title{
+.today-trending{
     font-size: 18px;
     margin: 25px 0px 5px;
     color:hsl(0, 0%, 33%);
+}
+
+.last-search{
+    font-size: 16px;
+    font-weight: 300;
+    color: hsl(251, 50%, 50%);
 }

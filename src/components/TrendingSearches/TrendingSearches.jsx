@@ -12,7 +12,7 @@ export default function TrendingSearches(){
 
     return <ul className='trends-list'>
         {trends.map(trend => 
-        <Link key={`${trend}`} to= {`gifs/${trend}`}>
+        <Link key={`${trend}`} to= {`search/${trend}`}>
         <li>{trend}</li>
         </Link>
         )}

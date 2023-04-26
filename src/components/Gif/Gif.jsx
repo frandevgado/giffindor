@@ -6,9 +6,9 @@ function Gif({title, id, url}){
 
     return(
         <div className="gifImg">
-        <Link to={`/detail/${id}`}>
-        <img src={url} alt={title} key={id}/>
-        </Link>
+          <Link to={`/detail/${id}`}>
+            <img src={url} alt={title} key={id}/>
+          </Link>
         </div>
     )
 }

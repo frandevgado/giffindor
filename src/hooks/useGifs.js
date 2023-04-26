@@ -4,7 +4,7 @@ import getGifs from 'services/getGifs'
 
 const INITIAL_PAGE = 0
 
-export default function useGifs({ keyword } = { keyword: null}){
+export function useGifs({ keyword } = { keyword: null}){
     const [ loading, setLoading ] = useState(false)
     const [ page, setPage] = useState(INITIAL_PAGE)
     const { gifs, setGifs } = useContext(GifsContext)

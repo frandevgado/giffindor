@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react"
 export default function useNearScreen({ externalRef, distance = '50px',  once = true } = {}){
     const [NearScreen, setNearScreen] = useState(false)
     const elementRef = useRef()
-
+    
     useEffect(() =>{
         const element = externalRef ? externalRef.current : elementRef.current
 

@@ -9,3 +9,5 @@ export function GifsContextProvider({children}){
         {children}
     </GifsContext.Provider>
 }
+
+export default GifsContext
